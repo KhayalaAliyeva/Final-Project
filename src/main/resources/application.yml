@@ -1,11 +1,14 @@
 server:
   port: 8080
+  tomcat:
+    accesslog:
+      enabled: true
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/final_project
-    username: postgres
-    password: xayala2003
+    url: jdbc:postgresql://dpg-cnd1gteg1b2c739khu4g-a.oregon-postgres.render.com:5432/final_project_qyq5
+    username: final_project_qyq5_user
+    password: A95rEq0AjOa9SHSDgG11zOaXiDdfYLQN
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
