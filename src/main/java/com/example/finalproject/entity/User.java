@@ -9,8 +9,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -29,7 +31,9 @@ public class User implements UserDetails{
     )
     private Long id;
     @NotBlank(message = "Name must not be blank")
-    private String name;
+    private String firstName;
+    @NotBlank(message = "Name must not be blank")
+    private String lastName;
     @NotBlank(message = "Email must not be blank")
     private String email;
     @NotBlank(message = "Password must not be blank")
@@ -38,7 +42,8 @@ public class User implements UserDetails{
     private String password;
     @Enumerated(EnumType.STRING)
     private RoleEnum role ;
-
+    @Column(name = "add_date")
+    private LocalDateTime add_date;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
